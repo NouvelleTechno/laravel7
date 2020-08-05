@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    echo "Brouette";
-});
+Route::get('/bonjour/{prenom}', 'MainController@bonjour');
 
-Route::get('/bonjour', function(){
-    echo 'Bonjour';
+Route::post('/formulaire', function(){
+    echo "Formulaire";
 });
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
